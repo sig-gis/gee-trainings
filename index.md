@@ -4,12 +4,8 @@ title: Overview
 nav_order: 1
 ---
 
-# COUNTRY NAME Geospatial Capacity Building Workshops
-These workshops aim to build participants' capacity to use geospatial technologies for mangrove and hydrological event management. For a detailed overview, you can read the workshop's [concept note](https://docs.google.com/document/d/1N3lmDg1uZoC4VQdsRQyvUtch2jIqBJpM_BBgyg_aUqE/edit?usp=sharing). By the end of this training series, participants will gain:
-1. A conceptual understanding of geographic information systems and use of QGIS;
-2. Knowledge of the use and interpretation of moderate and high resolution satellite imagery and synthetic aperture radar data;
-3. An overview of the Google Earth Engine platform;
-4. Methodological approaches for mangrove and flood mapping and change detection.
+# SIG Earth Engine Training Workshops
+The content on this training site aims to encapsulate the fundamentals of Earth Engine for developers and outline several use-case applications.
 
 The lesson content for each workshop can be found in the tabs on the lefthand side panel. Additionally, you can find information about all the workshop partners under the **Partners** tab, supplementary learning material under the **Resources** tab, and photos from the workshops (and a place to upload your own photos) under the **Photos** tab. 
 
