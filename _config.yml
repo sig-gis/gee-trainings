@@ -2,7 +2,7 @@ title: SIG Earth Engine Workshops
 description: Training Content for Google Earth Engine Workshops
 baseurl: "/gee-trainings" # the subpath of your site, e.g. /blog
 url: "https://sig-gis.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-logo: "/images/samz_usaid_nasa_ciat_sig.png"
+logo: "/images/image001.png"
 
 remote_theme: just-the-docs/just-the-docs
 
