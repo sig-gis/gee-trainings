@@ -2,7 +2,7 @@
 layout: page
 title: Challenge - Gather Relevant Datasets for your Region
 parent: Introduction to Google Earth Engine 1
-nav_order: 7
+nav_order: 8
 ---
 
 # Challenge
