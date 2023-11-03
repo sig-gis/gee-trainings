@@ -8,12 +8,6 @@ nav_order: 7
 # Overview
 In this module you will learn how to access and explore FeatureCollections in Earth Engine's data catalog, visualize them using style parameters, and practice some common analytics workflows.
 
-Outline
-
-* Bring in a FeatureCollection of Australian admin bounds and visualize it with style
-* run simple zonal statistics on them using some simple image product (minimize compute)
-* export result to Google Drive and BigQuery
-
 ## Before you Start
 
 The GEE community of developers have contributed many utility packages. We will one of these packages for FeatureCollection visualization. When you click this link, the GEE Code Editor will open and the package (a script repository with importable functions) will be added to your own script repository under 'Reader':
