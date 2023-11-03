@@ -10,7 +10,7 @@ In this module you will learn how to access and explore FeatureCollections in Ea
 
 ## Before you Start
 
-The GEE community of developers have contributed many utility packages. We will one of these packages for FeatureCollection visualization. When you click this link, the GEE Code Editor will open and the package (a script repository with importable functions) will be added to your own script repository under 'Reader':
+The GEE community of developers have contributed many utility packages. We will use one of these packages for FeatureCollection visualization. When you click this link, the GEE Code Editor will open and the package (a Code Editor script repository with importable functions) will be added to your own script repository under 'Reader':
 
 Click this link: [https://code.earthengine.google.com/?accept_repo=users/gena/packages](https://code.earthengine.google.com/?accept_repo=users/gena/packages)
 
@@ -43,9 +43,15 @@ Map.addLayer(styled,{},'adm2')
 
 We want to compute some summary statistic of a raster dataset within each administrative boundary. We'll use the Actual Evapotranspiration for Australia (`TERN/AET/CMRSET_LANDSAT_V2_2`). This dataset provides monthly averaged evapotranspiration from Landsat observations. Each image is a monthly average observation of ET, as we can see by the `print()` statement in the below code block. 
 
-We then define and in-line function within a `.map()` to say 'For every ET image in the collection, give me the mean ET value within each of my ADM2 features'. 
+Goal: We want to see how each ADM2 boundary's Evapotranspiration compares to one another in a given month of a given year. 
 
-The result is the same ADM2 FeatureCollection, but with an additional property 'ETa' that contains the new zonal statistic value from the ET image. Using some additional visualization packages (installed before you ran the script), you can style the ADM2 FeatureCollection based off of a property and a color palette, the same way we could do in common desktop GIS software. 
+We define an in-line function within a `.map()` to say 'For every monthly average ET observation (image in the ET collection), give me the mean ET value for each of my ADM2 features'. 
+
+The result is the same ADM2 FeatureCollection, but with an additional property 'ETa' that contains the new zonal statistic value (e.g. 'mean') from the ET image. 
+
+Using some additional visualization packages (installed before you ran the script), you can style the ADM2 FeatureCollection to visualize the 'Eta' property following a color palette, the same way we could do in common desktop GIS software. 
+
+We are only visualizing results from time step 1 (the very first ET image in the collection).
 
 ```javascript
 // Evapotranspiration monthly time series for AUS 
@@ -70,11 +76,11 @@ Map.addLayer(hist, {}, 'time1 styled')
 <img align="center" src="../images/intro-gee-images/adm2_et_visualized.PNG" hspace="15" vspace="10" width="600">
 
 
-## Export two ways
+## Export two ways: Google Drive & BigQuery
 
 Finally, you want to get the zonal statistics information out of GEE. You have several options. Two popular ones are Google Drive (as a CSV or Shapefile) and BigQuery.
 
-We will only do this for time step 1 to keep as a toy example, but operationalizing this doesn't require much more code. 
+We will only export for time step 1 to keep as a toy example, but operationalizing this doesn't require much more code. 
 
 ```javascript
 // Export to Google Drive [CSV]
