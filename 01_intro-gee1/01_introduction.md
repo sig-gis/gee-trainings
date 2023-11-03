@@ -16,12 +16,6 @@ In order to use Earth Engine well, you will need to develop basic skills in remo
 2. Understand the basic building blocks of JavaScript and its syntax
 3. Ability to explore and visualize remotely sensed data in Earth Engine
 
-
-## Requirements
-1. You will need in advance to have a GEE account approved. Go the GEE website and sign up for a new user account: [https://earthengine.google.com/signup/](https://earthengine.google.com/signup/).
-2. Click this link to accept the caribbean-trainings GEE script repository - [https://code.earthengine.google.com/?accept_repo=users/kwoodward/caribbean-trainings](https://code.earthengine.google.com/?accept_repo=users/kwoodward/caribbean-trainings).
-
-
 ### Introduction to Theory 
 The Earth Engine API 
 Google Earth Engine is a cloud-based platform for scientific data analysis. It provides ready-to-use, cloud-hosted datasets and a large pool of servers. One feature that makes Earth Engine particularly attractive is the ability to run large computations very fast by distributing them across a large pool of servers. The ability to efficiently use cloud-hosted datasets and computation is enabled by the Earth Engine API.

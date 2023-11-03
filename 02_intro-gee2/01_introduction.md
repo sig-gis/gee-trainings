@@ -15,18 +15,6 @@ Welcome to an Introduction to Google Earth Engine (GEE)! This workshop will give
 2. Understanding the programming paradigm and fundamentals using Javascript/Python languages.
 3. Learning the main commands and procedures to retrieve, geoprocess, visualize and export imagery, composites and/or mosaics.
 
-## Requirements
-
-1. You will need in advance to have a GEE account approved. Go the GEE website and sign up for a new user account: [https://earthengine.google.com/signup/](https://earthengine.google.com/signup/).
-2. Click this link to accept the caribbean-trainings GEE script repository - [https://code.earthengine.google.com/?accept_repo=users/kwoodward/caribbean-trainings](https://code.earthengine.google.com/?accept_repo=users/kwoodward/caribbean-trainings).
-3. Download the [data](https://drive.google.com/drive/folders/1Aov0j6ASs6eQVel4EeiiZrGaDRhq5WGQ?usp=share_link) used in this training 
-
-<img align="center" src="../images/intro-gee-images/01_signup.png" hspace="15" vspace="10" width="600">
-
-Figure 1. Interface of the Google Earth Engine (GEE) domain. a) General view. b) Sign up button. c) Create account button.
-
-You will need to wait for a couple of days to have a reply from the GEE team confirming your access.
-
 ## Google Earth Engine (GEE) Platform
 
 GEE is a cloud-based planetary scale environment for Earth science data, computer programming, and analysis (https://earthengine.google.com/). It allows us to access a diverse range of global and regional optical and radar datasets plus derived vectorial and raster products provided by different sources from the public and private sector.  The first step to use GEE is to have a GEE account and log in. The code editor can be accessed through https://code.earthengine.google.com.

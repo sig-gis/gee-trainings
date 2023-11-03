@@ -8,8 +8,6 @@ nav_order: 2
 # Overview
 
 ## Section 1: Getting Started in the Code Editor
-If you have not already done so, you can add the training’s code repository to the Code Editor by clicking this link:
-[https://code.earthengine.google.com/?accept_repo=users/kwoodward/trinidad-tobago](https://code.earthengine.google.com/?accept_repo=users/kwoodward/trinidad-tobago). The training’s scripts will then be available in the script manager panel to view, run, or modify. 
 
 The Code Editor ([https://code.earthengine.google.com/](https://code.earthengine.google.com/)) is an integrated development environment for the Earth Engine JavaScript API. It offers an easy way to type, debug, run, and manage code. Once you have followed Google’s documentation on registering for an Earth Engine account, you should follow the documentation to open the Code Editor. When you first visit the Code Editor, you will see a screen such as the one shown below.
 

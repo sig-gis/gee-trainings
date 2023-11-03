@@ -7,13 +7,13 @@ nav_order: 2
 
 # Satellite images in GEE - Browsing & pre-processing
 
-This exercise will walk us through retrieving and visualizing Landsat 8 data collections. Create a new repository called ‘training-servir-gee’.
+This exercise will walk us through retrieving and visualizing Landsat 8 data collections. Create a new script for this exercise.
 
 <img align="center" src="../images/intro-gee-images/03_new.png" hspace="15" vspace="10" width="600">
 
 Figure 3. Creating a new script.
 
-We set the name for our new script ‘sat_image_processing’.
+We'll set the name for our new script ‘sat_image_processing’.
 
 <img align="center" src="../images/intro-gee-images/04_name.png" hspace="15" vspace="10" width="400">
 
