@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Introduction to Google Earth Engine 2
-permalink: /intro-gee2
+permalink: /00_intro-gee2
 has_children: True
 nav_order: 5
 ---
