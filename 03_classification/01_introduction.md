@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Introduction
-parent: Mangrove Mapping Using Multiple Sensors
+parent: Image Classification
 nav_order: 1
 ---
 

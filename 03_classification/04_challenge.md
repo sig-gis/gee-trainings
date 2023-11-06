@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Challenges - Make Your Own Model, Make Improvements
-parent: Mangrove Mapping Using Multiple Sensors
+parent: Image Classification
 nav_order: 4
 ---
 
