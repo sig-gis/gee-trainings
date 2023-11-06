@@ -3,7 +3,7 @@ layout: page
 title: Image Classification
 permalink: /image-classification
 has_children: True
-nav_order: 10
+nav_order: 3
 ---
 
 # Image Classification
