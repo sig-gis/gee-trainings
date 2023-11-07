@@ -171,9 +171,42 @@ Immediately, we can pick out where some features are mixed up between classes, a
 
 # Run Accuracy Assessment
 
-This is the part in the workflow where you would conduct and accuracy assessment on your two land cover classification maps and go back to refine your input imagery and training data to improve the classification.  In the interest of time, we will skip this step for now, but it will be a part of the challenge section.
+It is time to test our the accuracy of our model (RF Classifier). We will use the validation set of points for this. We will assess year 1's classifier with year 1's validation points. You can recycle this code to do it for year 2's model. 
 
-*Tip: Refer to the previous lesson on [Mangrove Mapping](https://servir-amazonia.github.io/suriname-training/mangrove-mapping/03_Classification.html) for an example on how to create an error matrix and calculate accuracy.*
+```js
+// classify year1 test set with year1 classifier trained on year1 training set
+var classificationVal = testing_y1.classify(RFclassifier_y1);
+print('year 1 Classified points', classificationVal.limit(5));
+
+// Create confusion matrix.
+var confusionMatrix = classificationVal.errorMatrix({
+  actual: 'landcover', 
+  predicted: 'classification'
+});
+
+// Print Confusion Matrix and accuracies.
+print('year 1 Confusion matrix [Testing Set]:', confusionMatrix);
+print('year 1 Overall Accuracy [Testing Set]:', confusionMatrix.accuracy());
+```
+
+We obtained 98% overall accuracy, which is very good. However, we just saw how the classification may vary quantitavively and qualitatively. Other parameters can be estimated to help with the interpretation of results, from an individual perspective. These are the producer and user accuracy. For example, in the image below (taken from Congalton & Green, 2009), the producer accuracy is estimated by dividing the total number of correct sample units in the "deciduous" category (i.e., 65) by the total number of deciduous sample units as indicated by the reference data (i.e., 75 or the column total). This division results in a “producer’s accuracy” of 87%, which is quite good. If we stopped here, one might conclude that although this classification appears to be average overall, it is more than adequate for the deciduous category. Drawing such a conclusion could be a very serious mistake. A quick calculation of the “user’s accuracy” is computed by dividing the total number of correct sample units in the "deciduous" category (i.e., 65) by the total number of sample units classified as deciduous (i.e., 115 or the row total) reveals a value of 57%. In other words, although 87% of the deciduous areas have been correctly identified as deciduous, only 57% of the areas called deciduous on the map are actually deciduous on the ground. The high producer’s accuracy occurs because too much of the map is labeled "deciduous".
+
+<p align="center">
+<img src="../images/change-detection-1/Accuracy.png" vspace="10" width="600">
+</p>
+
+We can easily compute producers and users (also called consumers) accuracies with the below functions.
+
+```js
+print('year 1 Producers Accuracy [Testing Set]:', confusionMatrix.producersAccuracy());
+print('year 1 Users Accuracy [Testing Set]:', confusionMatrix.consumersAccuracy());
+
+// repeat above for year2 model accuracies
+```
+
+Which classes perform well? Which do not? Where do we have the worst comission error? Omission error? 
+
+Keep in mind that in a real-world modelling exercise, we may choose to train a single model on a variety of data, then use that model to make inferences. Here we trained two separate models for two different years and two different reference datasets.
 
 # Calculate Areas of Change
 
@@ -324,4 +357,4 @@ print('Stable Forest (km^2):',areaSqKmForestStable);
 
 It is important to remember that in such two-date change detection with simple differencing between land cover classifications or spectral indices, many errors are propogated through the process and are inherently present in your final results.  For example, there are errors in the satellite data (sensor failures or cloud cover), errors in the preprocessing algorithms (what is done by the data creators (like NASA/ESA) and what is done by you), errors in the sample data (you incorrectly identify forest as agriculture or urban as bare soil), and errors in the classification (misclassifications where spectral differences are similar or training data is poor). It is also very difficult to quantify these errors, and it is hard to know whether they are over- or underestimates of the true values.  There are several ways to minimize these errors - or at least statistically quantify their direction and magnitude.  One of these is [time series change detection](https://servir-amazonia.github.io/suriname-training/change-detection-2), which is covered in the next lesson, and another is [sample-based map validation and area estimation](https://servir-amazonia.github.io/guyana-training/ceo), which is partially covered in a later lesson.
 
-Code Checkpoint: [https://code.earthengine.google.com/?scriptPath=users%2Febihari%2FSurinameWS%3AChange%20Detection%20-%20Two%20Date%20v3](https://code.earthengine.google.com/?scriptPath=users%2Febihari%2FSurinameWS%3AChange%20Detection%20-%20Two%20Date%20v3)
+Code Checkpoint: [https://code.earthengine.google.com/656e48a9e63894380694704ff754bf0d](https://code.earthengine.google.com/656e48a9e63894380694704ff754bf0d)

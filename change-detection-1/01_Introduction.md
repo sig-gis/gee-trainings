@@ -7,7 +7,7 @@ nav_order: 1
 
 # Introduction
 
-Welcome to two-date change detection! In this workshop, we will assess land cover change between two years using Landsat data.  First, we will create land cover classification maps for two different years using a random forest classification.  Then, we will compare the two land cover classfication maps to identify the locations and areas of changes.
+Welcome to Classification and Change Detection! In this workshop, we will assess land cover change between two years using Landsat data.  First, we will create land cover classification maps for two different years using a random forest classification.  Then, we will compare the two land cover classfication maps to identify the locations and areas of changes.
 
 Follow along by copying and pasting each code block in the lesson into your own blank script. At the end you will have the entire workflow saved to a script file on your own GEE account.
 
@@ -16,9 +16,8 @@ Follow along by copying and pasting each code block in the lesson into your own 
 ## Pre-workshop Set-up 
 
 1. Ensure you are logged into your Google Earth Engine account.
-2. Click this link to accept the Suriname GEE script repository - [https://code.earthengine.google.com/?accept_repo=users/ebihari/SurinameWS](https://code.earthengine.google.com/?accept_repo=users/ebihari/SurinameWS)
-3. Create a new script file in your own script repository - name it **Change Detection - Two Date**. 
-4. A master copy of the script is available in the script repository -[https://code.earthengine.google.com/?scriptPath=users%2Febihari%2FSurinameWS%3AChange%20Detection%20-%20Two%20Date%20v3](https://code.earthengine.google.com/?scriptPath=users%2Febihari%2FSurinameWS%3AChange%20Detection%20-%20Two%20Date%20v3)
+2. Create a new script file in your own script repository - name it **Change Detection - Two Date**. 
+
 
 ## Objectives
 1. Run a random forest land cover classification based on spectral signature differences of land cover types.

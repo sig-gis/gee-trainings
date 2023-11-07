@@ -3,7 +3,7 @@ layout: page
 title: "Classification and Change Detection"
 permalink: /change-detection-1
 has_children: True
-nav_order: 3
+nav_order: 4
 ---
 
 # Classification and Change Detection

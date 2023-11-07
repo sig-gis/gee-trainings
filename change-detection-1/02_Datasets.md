@@ -116,7 +116,7 @@ print("Landsat 5 image collection:", lt5)
 
 <img align="center" src="../images/change-detection-1/landsat5_print.png" hspace="15" vspace="10" width="600">
 
-Checking in the **Console**, we see that `lt5` is an `ImageCollection` with over 280 images in it. 
+Checking in the **Console**, we see that `lt5` is an `ImageCollection` with 280 images in it. 
 
 # Preprocess Landsat Data
 
@@ -449,4 +449,4 @@ var testing_y2 = random_y2.filter(ee.Filter.gt('random',0.8));
 
 We now finished importing, creating, and preprocessing our data sets.  Continue to the next section for running the land cover classifications and calculating land cover changes.
 
-Code Checkpoint: [https://code.earthengine.google.com/?scriptPath=users%2Febihari%2FSurinameWS%3AChange%20Detection%20-%20Two%20Date%20v3](https://code.earthengine.google.com/?scriptPath=users%2Febihari%2FSurinameWS%3AChange%20Detection%20-%20Two%20Date%20v3)
+Code Checkpoint: [https://code.earthengine.google.com/2c32bf74f7a33dab9048e6b08944add2](https://code.earthengine.google.com/2c32bf74f7a33dab9048e6b08944add2)
