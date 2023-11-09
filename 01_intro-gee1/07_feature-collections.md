@@ -8,12 +8,18 @@ nav_order: 7
 # Overview
 In this module you will learn how to access and explore FeatureCollections in Earth Engine's data catalog, visualize them using style parameters, and practice some common analytics workflows.
 
-## Before you Start
+## Before You Start
 
 The GEE community of developers have contributed many utility packages. We will use one of these packages for FeatureCollection visualization. When you click this link, the GEE Code Editor will open and the package (a Code Editor script repository with importable functions) will be added to your own script repository under 'Reader':
 
 Click this link: [https://code.earthengine.google.com/?accept_repo=users/gena/packages](https://code.earthengine.google.com/?accept_repo=users/gena/packages)
 
+
+## Import Required Packages
+```javascript
+var style = require('users/gena/packages:style')
+var palettes = require('users/gena/packages:palettes')
+```
 
 ## Visualizing Admin Boundary Feature Collection
 
@@ -43,6 +49,12 @@ Map.addLayer(styled,{},'adm2')
 
 We want to compute some summary statistic of a raster dataset within each administrative boundary. We'll use the Actual Evapotranspiration for Australia (`TERN/AET/CMRSET_LANDSAT_V2_2`). This dataset provides monthly averaged evapotranspiration from Landsat observations. Each image is a monthly average observation of ET, as we can see by the `print()` statement in the below code block. 
 
+```javascript
+// Evapotranspiration monthly time series for AUS 
+var et = ee.ImageCollection("TERN/AET/CMRSET_LANDSAT_V2_2")
+print(et.limit(12,'system:index',false)) // most recent 12 images
+```
+
 Goal: We want to see how each ADM2 boundary's Evapotranspiration compares to one another in a given month of a given year. 
 
 We define an in-line function within a `.map()` to say 'For every monthly average ET observation (image in the ET collection), give me the mean ET value for each of my ADM2 features'. 
@@ -54,10 +66,6 @@ Using some additional visualization packages (installed before you ran the scrip
 We are only visualizing results from time step 1 (the very first ET image in the collection).
 
 ```javascript
-// Evapotranspiration monthly time series for AUS 
-var et = ee.ImageCollection("TERN/AET/CMRSET_LANDSAT_V2_2")
-print(et.limit(12,'system:index',false).aggregate_array('system:index')) // most recent 12 images
-
 // Zonal Stats - average ET per ADM2 zone per ET time point
 var etStats = et.map(function(i){
   var img = ee.Image(i)
@@ -66,8 +74,9 @@ var etStats = et.map(function(i){
 })
 
 var time1 = ee.FeatureCollection(etStats.first())
+print(time1.limit(5))
 
-// add styled points
+// Display ADM2 features styled on ETa average value
 var palette = palettes.cb.YlOrRd[9]
 var hist = style.Feature.histogram(time1, 'ETa', { palette: palette, pointSize: 2, width: 0, opacity:0.75 })
 Map.addLayer(hist, {}, 'time1 styled')
@@ -76,7 +85,7 @@ Map.addLayer(hist, {}, 'time1 styled')
 <img align="center" src="../images/intro-gee-images/adm2_et_visualized.PNG" hspace="15" vspace="10" width="600">
 
 
-## Export two ways: Google Drive & BigQuery
+## Export Two Ways: Google Drive & BigQuery
 
 Finally, you want to get the zonal statistics information out of GEE. You have several options. Two popular ones are Google Drive (as a CSV or Shapefile) and BigQuery.
 
@@ -101,3 +110,5 @@ Export.table.toBigQuery({
   table:'sig-ee-cloud.fcdemo.et_stats', // need to make the BQ dataset first, it will make the table for you
 })
 ```
+
+Code Checkpoint: [https://code.earthengine.google.com/091e8bd88c897c0c8b59ad3a1d7dc6f9](https://code.earthengine.google.com/091e8bd88c897c0c8b59ad3a1d7dc6f9)
